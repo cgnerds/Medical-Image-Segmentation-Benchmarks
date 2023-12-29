@@ -61,10 +61,8 @@ Please put the [BUSI](https://www.kaggle.com/aryashah2k/breast-ultrasound-images
 
 ## Environments
 
-- GPU: NVIDIA GeForce RTX4090 GPU
-- Pytorch: 1.13.0 cuda 11.7
-- cudatoolkit: 11.7.1
-- scikit-learn: 1.0.2
+- GPU: NVIDIA GeForce RTX4090 / RTX6000 GPU
+- Pytorch: 2.1.2 cuda 12.1
 
 ## Training
 
@@ -77,7 +75,8 @@ python split.py --dataset_root ./data --dataset_name busi
 Then, training and validating your dataset:
 
 ```python
-python main.py --model [CMUNeXt] --base_dir ./data/busi --train_file_dir busi_train.txt --val_file_dir busi_val.txt --base_lr 0.01 --epoch 300 --batch_size 8
+# RTX6000/BS64-29m5s
+python main.py --model [CMUNeXt] --base_dir ./data/busi --train_file_dir busi_train.txt --val_file_dir busi_val.txt --base_lr 0.01 --epoch 300 --batch_size 64
 ```
 
 ## Results on BUSI

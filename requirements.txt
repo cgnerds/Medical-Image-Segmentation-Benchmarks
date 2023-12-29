@@ -1,0 +1,8 @@
+scikit-learn
+opencv-python-headless
+albumentations==1.0.3
+timm
+ml_collections
+einops
+yacs
+matplotlib
