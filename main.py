@@ -49,6 +49,7 @@ parser.add_argument('--epoch', type=int, default=300, help='train epoch')
 parser.add_argument('--img_size', type=int, default=256, help='img size of per batch')
 parser.add_argument('--num_classes', type=int, default=1, help='seg num_classes')
 parser.add_argument('--seed', type=int, default=41, help='random seed')
+parser.add_argument('--img_ext', default='.png', help='image file extension')
 args = parser.parse_args()
 seed_torch(args.seed)
 
@@ -89,9 +90,9 @@ def getDataloader(args):
         albu.Normalize(),
     ])
     db_train = MedicalDataSets(base_dir=args.base_dir, split="train",
-                            transform=train_transform, train_file_dir=args.train_file_dir, val_file_dir=args.val_file_dir)
+                            transform=train_transform, train_file_dir=args.train_file_dir, val_file_dir=args.val_file_dir, img_ext=args.img_ext)
     db_val = MedicalDataSets(base_dir=args.base_dir, split="val", transform=val_transform,
-                          train_file_dir=args.train_file_dir, val_file_dir=args.val_file_dir)
+                          train_file_dir=args.train_file_dir, val_file_dir=args.val_file_dir, img_ext=args.img_ext)
     print("train num:{}, val num:{}".format(len(db_train), len(db_val)))
 
     trainloader = DataLoader(db_train, batch_size=args.batch_size, shuffle=True, num_workers=8, pin_memory=False)

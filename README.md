@@ -69,14 +69,17 @@ Please put the [BUSI](https://www.kaggle.com/aryashah2k/breast-ultrasound-images
 You can first split your dataset:
 
 ```python
-python split.py --dataset_root ./data --dataset_name busi
+# python split.py --dataset_root ./data --dataset_name wrist --img_ext .jpg
+python split.py --dataset_root ./data --dataset_name busi --img_ext .png
 ```
 
 Then, training and validating your dataset:
 
 ```python
 # RTX6000/BS64-29m5s, A6000/BS64-49m30s
-python main.py --model [CMUNeXt] --base_dir ./data/busi --train_file_dir busi_train.txt --val_file_dir busi_val.txt --base_lr 0.01 --epoch 300 --batch_size 64
+# python main.py --model CMUNeXt --base_dir ./data/busi --train_file_dir busi_train.txt --val_file_dir busi_val.txt  --img_ext .png --base_lr 0.01 --epoch 300 --batch_size 64
+# python main.py --model CMUNeXt --base_dir ./data/wrist --train_file_dir wrist_train.txt --val_file_dir wrist_val.txt  --img_ext .jpg --base_lr 0.01 --epoch 300 --batch_size 48
+python main.py --model [CMUNeXt] --base_dir ./data/busi --train_file_dir busi_train.txt --val_file_dir busi_val.txt  --img_ext .png --base_lr 0.01 --epoch 300 --batch_size 64
 ```
 
 ## Results on BUSI
