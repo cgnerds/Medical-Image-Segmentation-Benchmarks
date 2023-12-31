@@ -75,7 +75,7 @@ python split.py --dataset_root ./data --dataset_name busi
 Then, training and validating your dataset:
 
 ```python
-# RTX6000/BS64-29m5s
+# RTX6000/BS64-29m5s, A6000/BS64-49m30s
 python main.py --model [CMUNeXt] --base_dir ./data/busi --train_file_dir busi_train.txt --val_file_dir busi_val.txt --base_lr 0.01 --epoch 300 --batch_size 64
 ```
 

@@ -160,4 +160,5 @@ cython_debug/
 #.idea/
 
 data/busi/
+data/wrist/
 checkpoint/
