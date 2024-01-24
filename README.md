@@ -63,14 +63,19 @@ Please put the [BUSI](https://www.kaggle.com/aryashah2k/breast-ultrasound-images
 
 - GPU: NVIDIA GeForce RTX4090 / RTX6000 GPU
 - Pytorch: 2.1.2 cuda 12.1
-
+## Install
+``` bash
+conda create -n med python=3.10 -y
+conda activate med
+pip install -r requirements.txt
+```
 ## Training
 
 You can first split your dataset:
 
 ```python
-# python split.py --dataset_root ./data --dataset_name wrist --img_ext .jpg
-python split.py --dataset_root ./data --dataset_name busi --img_ext .png
+# python split.py --dataset_root ./data --dataset_name busi --img_ext .png
+  python split.py --dataset_root ./data --dataset_name busi --img_ext .png
 ```
 
 Then, training and validating your dataset:
