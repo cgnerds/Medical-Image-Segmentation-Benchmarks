@@ -19,7 +19,7 @@ from src.network.conv_based.AttU_Net import AttU_Net
 from src.network.conv_based.UNeXt import UNext
 from src.network.conv_based.UNetplus import ResNet34UnetPlus
 from src.network.conv_based.UNet3plus import UNet3plus
-from src.network.conv_based.CMUNeXt import cmunext
+from src.network.conv_based.CMUNeXt import cmunext, cmunext_l
 
 from src.network.transfomer_based.transformer_based_network import get_transformer_based_model
 
@@ -58,7 +58,7 @@ def get_model(args):
     if args.model == "CMUNet":
         model = CMUNet(output_ch=args.num_classes).cuda()
     elif args.model == "CMUNeXt":
-        model = cmunext(num_classes=args.num_classes).cuda()
+        model = cmunext_l(num_classes=args.num_classes).cuda()
     elif args.model == "U_Net":
         model = U_Net(output_ch=args.num_classes).cuda()
     elif args.model == "AttU_Net":
