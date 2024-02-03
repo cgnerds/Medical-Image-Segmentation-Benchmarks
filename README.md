@@ -74,7 +74,7 @@ pip install -r requirements.txt
 You can first split your dataset:
 
 ```python
-# python split.py --dataset_root ./data --dataset_name busi --img_ext .png
+# python split.py --dataset_root ./data --dataset_name wrist --img_ext .jpg
   python split.py --dataset_root ./data --dataset_name busi --img_ext .png
 ```
 
